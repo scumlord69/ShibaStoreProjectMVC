@@ -1,0 +1,206 @@
+﻿@model List<ShibaStoreProject.Dog>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+
+    <script type='text/javascript'>
+
+
+    </script>
+
+    <div class="backgroundimage">
+        <div class="shibastoretop">
+            <div id="mainpage">
+                <div class="shibaheaderstore">
+                    <div class="headertext">
+                        <a class="textlefttitle" style="border-right: solid 2px white; padding-right: 1.5%;" onclick="location.href='@Url.Action("Index", "Home")'">Shiba Central</a>
+                        <a class="textleft" style="margin-left:1.3%;" onclick="location.href='@Url.Action("Index", "Store")'">Store</a>
+                        <a class="textleft" href="https://www.w3schools.com">Community</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a class="textright" onclick="location.href='@Url.Action("Index", "MyPage")'">My Page</a>
+
+                            <a class="textright" onclick="location.href='@Url.Action("Logout", "Login")'">Logout</a>
+                        }
+                        else
+                        {
+                            <a class="textright" onclick="location.href='@Url.Action("Register", "Login")'">Register</a>
+
+                            <a class="textright" onclick="location.href='@Url.Action("Index", "Login")'">Login</a>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            @foreach (var dog in Model)
+            {
+                <div class="dogstorecontainer" id="@(dog.DogID + "container")">
+
+                    <br />
+
+                    <img class="storeimage" id="selecteddogimage" src="@("/Resources/Images/" + dog.ImageName)" />
+
+                    <div class="storetextcontainer">
+                        <h1 class="dogname" id="selectedname">
+                            @dog.DogName
+                        </h1>
+                        <p class="dogdesc" id="selecteddesc">
+                            @dog.DogDesc
+                        </p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+                            StoreDBEntities db = new StoreDBEntities();
+                            var uID = Convert.ToInt32(System.Web.HttpContext.Current.Session["sessionID"]);
+
+                            User users = db.Users.First(i => i.UserID == uID);
+
+                            if (db.Dogs.FirstOrDefault(i => i.DogID == dog.DogID && i.Users.Any(t => t.UserID == uID)) != null)
+                            {
+                                <p class="dogdesc" style="color:darkgray;">
+                                    This dog is already in your wishlist. :)
+                                </p>
+                                <input style="display:none;" type="number" name="dogID" id="selectedid" value="@dog.DogID" />
+                            }
+                            else
+                            {
+                                using (Html.BeginForm())
+                                {
+
+                                    <input style="display:none;" type="number" name="dogID" id="selectedid" value="@dog.DogID" />
+                                    <p class="wishbuttontext">
+                                        <input class="wishbutton" type="submit" value="Wish this dog" />
+                                    </p>
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            <input style="display:none;" type="number" name="dogID" id="selectedid" value="@dog.DogID" />
+                            <p class="dogdesc" style="color:darkgray;">You have to be <span class="loginspan" style="color:orange;"><a onclick="location.href='@Url.Action("Index", "Login")'">logged in</a></span> to add this dog to your wishlist. :(</p>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+
+
+        <div id="pagemiddle" style="overflow:auto;">
+            <h1 class="middletexttitle">
+                These are our dogs
+            </h1>
+
+
+            <div>
+                <ul class="selectorlist">
+                    @foreach (var dog in Model)
+                    {
+                    <li>
+                        <div class="dogselector">
+                            <a onclick="SetDog('@dog.DogName','@dog.DogDesc', '@dog.ImageName', '@(dog.DogName + "selector")', '@dog.DogID')"><img class="selectorimage" id="@(dog.DogName + "selector")" src="@("/Resources/Images/" + dog.ImageName)" /></a>
+                        </div>
+                        <p class="selectortext">@dog.DogName</p>
+                       
+                    </li>
+                    }
+                </ul>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <div id="pagefooter">
+        <img class="shibahead" src="~/Resources/Images/shibahead.png" />
+        <h1 class="footertitle">SHIBA CENTRAL™</h1>
+        <ul class="footerlist">
+            <li style="border:none;"><a href="https://www.w3schools.com"><p>CAREERS</p></a></li>
+            <li><a href="https://www.w3schools.com"><p>ABOUT</p></a></li>
+            <li><a href="https://www.w3schools.com"><p>SUPPORT</p></a></li>
+            <li><a href="https://www.w3schools.com"><p>CONTACT US</p></a></li>
+            <li><a href="https://www.w3schools.com"><p>PRESS</p></a></li>
+
+        </ul>
+
+        <p class="legaltext" style="font-size: 15px; margin-top: 1.7%; margin-bottom: 2%;">
+            ©2018 SHIBA CENTRAL, INC. ALL RIGHTS RESERVED.
+            <br />
+            All trademarks referenced herein are the properties of their respective owners.
+        </p>
+    </div>
+
+    
+
+    <script type="text/javascript">
+        var selectedDogID = "";
+        var previousDogID = "";
+
+        var selectedSelector = "";
+        var previousSelector = "";
+
+        function SetDog(dogname, dogdesc, dogimage, dogselector, dogid) {
+
+            if (dogselector == selectedDogID) {
+                return;
+            }
+            document.getElementById(previousDogID).style.webkitFilter = "brightness(80%)";
+            document.getElementById(previousDogID).style.transform = "unset";
+            document.getElementById(previousSelector + "container").style.display = "none";
+
+            selectedDogID = dogselector;
+            previousDogID = selectedDogID;
+
+            selectedSelector = dogid;
+            previousSelector = selectedSelector;
+
+            document.getElementById(dogid + "container").style.display = "flex";
+            document.getElementById("selectedname").innerHTML = dogname;
+            document.getElementById("selecteddesc").innerHTML = dogdesc;
+            document.getElementById("selectedid").value = dogid;
+
+
+            
+            document.getElementById("selecteddogimage").src = "/Resources/Images/" + dogimage;
+            document.getElementById(dogselector).style.transform = "scale(1.2)";
+            document.getElementById(dogselector).style.webkitFilter = "brightness(130%)";
+        }
+
+        function SetDogs() {
+
+
+            document.getElementById('@(Model[0].DogID + "container")').style.display = "flex";
+            document.getElementById('@(Model[0].DogName + "selector")').style.transform = "scale(1.2)";
+            document.getElementById('@(Model[0].DogName + "selector")').style.webkitFilter = "brightness(120%)";
+            previousDogID = '@(Model[0].DogName + "selector")';
+            previousSelector = @Model[0].DogID;
+        }
+
+
+        
+        window.onload = SetDogs()
+
+       
+        
+    </script>
+</body>
+</html>

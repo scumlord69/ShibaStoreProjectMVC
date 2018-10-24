@@ -1,0 +1,122 @@
+﻿@model List<ShibaStoreProject.Dog>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <div id="mainpage">
+        <div class="shibaheader">
+            <div class="headertext">
+                <a class="textlefttitle" style="border-right: solid 2px white; padding-right: 1.5%;" onclick="location.href='@Url.Action("Index", "Home")'">Shiba Central</a>
+                <a class="textleft" style="margin-left:1.3%;" onclick="location.href='@Url.Action("Index", "Store")'">Store</a>
+                <a class="textleft" href="https://www.w3schools.com">Community</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a class="textright" onclick="location.href='@Url.Action("Index", "MyPage")'">My Page</a>
+
+                    <a class="textright" onclick="location.href='@Url.Action("Logout", "Login")'">Logout</a>
+                }
+                else
+                {
+                    <a class="textright" onclick="location.href='@Url.Action("Register", "Login")'">Register</a>
+
+                    <a class="textright" onclick="location.href='@Url.Action("Index", "Login")'">Login</a>
+                }
+
+
+            </div>
+        </div>
+
+        <div style="margin-bottom: 0%; height:auto; ">
+
+            <img class="shibaimgmain" src="~/Resources/Images/mainshiba.png" />
+            <div class="text-block">
+                <h1 style="margin-bottom: 0;">"Woof woof"</h1>
+                <p style="margin-bottom: 0; margin-top: 0;">- This dog, probably</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="featureddogs">
+
+        <h1 class="featureddogstitle">FEATURED DOGS</h1>
+        <div class="doglist">
+            <ul class="doglistul" style="list-style:none; padding-left: 0; ">
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    <li>
+                        <div class="dogcontainer">
+
+                            <a onclick="location.href='@Url.Action("Index", "Store")'"><img src="@("/Resources/Images/" + Model[i].ImageName)" class="containerimage" /></a>
+                            <div class="containertextbox">
+                                <p class="containertext">@Model[i].DogName</p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                }
+
+
+            </ul>
+
+        </div>
+        <a onclick="location.href='@Url.Action("Index", "Store")'" class="viewdogbutton"><p class="viewdogbuttontext">View all dogs</p></a>
+    </div>
+    <div id="pagemiddle">
+        <h1 class="middletexttitle">
+            Welcome to Shiba Central
+        </h1>
+        <p class="middletextbody">
+            The Shiba Inu (柴犬, Japanese: [ɕiba̠ inɯ̟ᵝ]) is the smallest of the six original and distinct spitz breeds of dog native to Japan.[1]
+
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.[1][2] It looks similar to and is often mistaken for other Japanese dog breeds like the Akita Inu or Hokkaido, but the Shiba Inu is a different breed with a distinct blood line, temperament and smaller size than other Japanese dog breeds.[3][4][5]
+        </p>
+        <p class="socialmediatext">Follow us on social media</p>
+
+        <div class="socialmedialist">
+            <ul style="list-style:none; padding-left: 0;">
+                <li><a href="http://www.youareanidiot.org/"><img src="~/Resources/Images/facebookicon.png" class="socialmediaitem" /></a></li>
+                <li><a href="http://www.youareanidiot.org/"><img src="~/Resources/Images/instagramicon.png" class="socialmediaitem" /></a></li>
+                <li><a href="http://www.youareanidiot.org/"><img src="~/Resources/Images/youtubeicon.png" class="socialmediaitem" /></a></li>
+                <li><a href="http://www.youareanidiot.org/"><img src="~/Resources/Images/twittericon.png" class="socialmediaitem" /></a></li>
+
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="pagefooter">
+        <img class="shibahead" src="~/Resources/Images/shibahead.png" />
+        <h1 class="footertitle">SHIBA CENTRAL™</h1>
+        <ul class="footerlist">
+            <li style="border:none;"><a href="http://www.youareanidiot.org/"><p>CAREERS</p></a></li>
+            <li><a href="http://www.youareanidiot.org/"><p>ABOUT</p></a></li>
+            <li><a href="http://www.youareanidiot.org/"><p>SUPPORT</p></a></li>
+            <li><a href="http://www.youareanidiot.org/"><p>CONTACT US</p></a></li>
+            <li><a href="http://www.youareanidiot.org/"><p>PRESS</p></a></li>
+
+        </ul>
+
+        <p class="legaltext" style="font-size: 15px; margin-top: 1.7%; margin-bottom: 2%;">
+            ©2018 SHIBA CENTRAL, INC. ALL RIGHTS RESERVED.
+            <br />
+            All trademarks referenced herein are the properties of their respective owners.
+        </p>
+    </div>
+</body>
+</html>

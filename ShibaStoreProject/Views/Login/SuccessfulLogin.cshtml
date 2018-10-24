@@ -1,0 +1,76 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+    <div class="backgroundimage">
+        <div class="shibastoretop">
+            <div id="mainpage">
+                <div class="shibaheaderstore">
+                    <div class="headertext">
+                        <a class="textlefttitle" style="border-right: solid 2px white; padding-right: 1.5%;" onclick="location.href='@Url.Action("Index", "Home")'">Shiba Central</a>
+                        <a class="textleft" style="margin-left:1.3%;" onclick="location.href='@Url.Action("Index", "Store")'">Store</a>
+                        <a class="textleft" href="https://www.w3schools.com">Community</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a class="textright" onclick="location.href='@Url.Action("Index", "MyPage")'">My Page</a>
+
+                            <a class="textright" onclick="location.href='@Url.Action("Logout", "Login")'">Logout</a>
+                        }
+                        else
+                        {
+                            <a class="textright" onclick="location.href='@Url.Action("Register", "Login")'">Register</a>
+
+                            <a class="textright" onclick="location.href='@Url.Action("Index", "Login")'">Login</a>
+                        }
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+        <div class="logindiv">
+            <h1 class="middletexttitle">
+                Login
+            </h1>
+            <p class="success">
+                You have been successfully logged in! :)
+            </p>
+
+
+        </div>
+
+        <div id="pagefooter">
+            <img class="shibahead" src="~/Resources/Images/shibahead.png" />
+            <h1 class="footertitle">SHIBA CENTRAL™</h1>
+            <ul class="footerlist">
+                <li style="border:none;"><a href="https://www.w3schools.com"><p>CAREERS</p></a></li>
+                <li><a href="https://www.w3schools.com"><p>ABOUT</p></a></li>
+                <li><a href="https://www.w3schools.com"><p>SUPPORT</p></a></li>
+                <li><a href="https://www.w3schools.com"><p>CONTACT US</p></a></li>
+                <li><a href="https://www.w3schools.com"><p>PRESS</p></a></li>
+
+            </ul>
+
+            <p class="legaltext" style="font-size: 15px; margin-top: 1.7%; margin-bottom: 2%;">
+                ©2018 SHIBA CENTRAL, INC. ALL RIGHTS RESERVED.
+                <br />
+                All trademarks referenced herein are the properties of their respective owners.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

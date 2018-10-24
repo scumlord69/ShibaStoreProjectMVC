@@ -1,0 +1,746 @@
+﻿body, html {
+    background-color: #F0EDF2;
+    margin: 0;
+    height: 100%;
+}
+
+#mainpage {
+    position: relative;
+}
+
+.errormessage {
+    color: white;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 2%;
+    margin-bottom: 0;
+    margin-top: 0%;
+    font-weight: bold;
+}
+
+.shibaheader {
+    background: rgba(0, 0, 0, 0.6);
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    position: absolute;
+    margin-top: 1%;
+    overflow: hidden;
+    padding-top: 0.8%;
+    padding-bottom: 0.8%;
+}
+
+    .shibaheader .icon {
+        display: none;
+    }
+
+.headertext {
+    color: white;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-bottom: 1%;
+    font-size: 35px;
+    font-family: 'Open Sans', sans-serif;
+    transition: color 0.2s linear;
+    -moz-transition: color 0.2s linear; /* Firefox 4 */
+    -webkit-transition: color 0.2s linear; /* Safari and Chrome */
+    -o-transition: color 0.2s linear; /* Opera */
+    -ms-transition: color 0.2s linear; /* Explorer 10 */
+}
+
+.shibaimgmain {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.textleft {
+    margin-left: 0.8%;
+    padding-right: 0%;
+    float: left;
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s linear;
+    -moz-transition: color 0.2s linear; /* Firefox 4 */
+    -webkit-transition: color 0.2s linear; /* Safari and Chrome */
+    -o-transition: color 0.2s linear; /* Opera */
+    -ms-transition: color 0.2s linear; /* Explorer 10 */
+    cursor: pointer;
+}
+
+.textlefttitle {
+    font-family: 'Fredoka One', cursive;
+    font-size: 40px;
+    float: left;
+    white-space: nowrap;
+    margin-left: 0.8%;
+    cursor: pointer;
+}
+
+.textright {
+    float: right;
+    margin-right: 0.8%;
+    margin-left: 0.8%;
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s linear;
+    -moz-transition: color 0.2s linear; /* Firefox 4 */
+    -webkit-transition: color 0.2s linear; /* Safari and Chrome */
+    -o-transition: color 0.2s linear; /* Opera */
+    -ms-transition: color 0.2s linear; /* Explorer 10 */
+    cursor: pointer;
+}
+
+.textlefttitle :hover {
+    text-shadow: -3px 0px 3px rgba(168, 221, 255, 1);
+}
+
+.headertext a:hover {
+    transition: color 0.2s linear;
+    -moz-transition: color 0.2s linear; /* Firefox 4 */
+    -webkit-transition: color 0.2s linear; /* Safari and Chrome */
+    -o-transition: color 0.2s linear; /* Opera */
+    -ms-transition: color 0.2s linear; /* Explorer 10 */
+    color: orange;
+    transition: 0.3s;
+}
+
+#featureddogs {
+    width: 100%;
+    text-align: center;
+    height: auto;
+}
+
+#pagemiddle {
+    background-image: url(../Resources/Images/middleimg.jpg);
+    margin: 0;
+    height: auto;
+    border-top: solid 5px dimgray;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+}
+
+
+.middletexttitle {
+    font-family: 'Fredoka One', cursive;
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 2px 7px #000000;
+    display: inline-block;
+    margin-bottom: 1.5%;
+}
+
+.middletextbody {
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0;
+    padding-top: 1.5%;
+    border-top: white solid 5px;
+    border-bottom: white solid 5px;
+    padding-bottom: 1.5%;
+}
+
+#pagefooter {
+    background-color: #F0EDF2;
+    width: 100%;
+    display: inline-block;
+}
+
+.socialmediatext {
+    font-family: 'Fredoka One', cursive;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .headertext {
+        font-size: 16px;
+    }
+
+    .textlefttitle {
+        font-size: 20px;
+    }
+
+    .text-block h1 {
+        font-size: 50px;
+    }
+
+    .text-block p {
+        font-size: 20px;
+    }
+}
+
+
+
+.socialmedialist {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 2%;
+    padding: 0;
+}
+
+.socialmediaitem {
+    width: 90px;
+    height: 90px;
+    padding: 0;
+}
+
+.socialmedialist li {
+    display: inline;
+    padding: 10px;
+}
+
+    .socialmedialist li:hover {
+        -webkit-filter: brightness(150%);
+    }
+
+.text-block {
+    position: absolute;
+    bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    width: 100%;
+    color: #FFFFFF;
+    text-shadow: 3px 5px 2px #474747;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.shibahead {
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+.footertitle {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+    margin-bottom: 0%;
+}
+
+.featureddogstitle {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 39px;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 2%;
+    margin-bottom: 1.5%;
+}
+
+.doglist {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 0%;
+    padding: 0;
+    cursor: pointer;
+}
+
+    .doglist li {
+        display: inline;
+        padding: 10px;
+    }
+
+.doglistul {
+    margin-bottom: 1%;
+}
+
+.dogcontainer {
+    width: 396.656px;
+    height: 178.484px;
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 2%;
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+    position: relative;
+    -webkit-box-shadow: 6px 7px 11px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 7px 11px -5px rgba(0,0,0,0.75);
+    box-shadow: 6px 7px 11px -5px rgba(0,0,0,0.75);
+    margin-top: 0;
+    transition: 0.3s;
+}
+
+
+
+.containerimage {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    transition: 0.3s;
+}
+
+.dogcontainer:hover div {
+    transition: all .3s ease-in-out;
+    transform: scale(1.1);
+}
+
+.dogcontainer:hover img {
+    transition: all .3s ease-in-out;
+    transform: scale(1.1);
+}
+
+.dogcontainerright:hover div {
+    transition: all .3s ease-in-out;
+    transform: scale(1.1);
+}
+
+
+.containertextbox {
+    position: absolute;
+    text-align: left;
+    color: white;
+    font-size: 30px;
+    top: 74.5%;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.dogcontainerright {
+    width: 396.656px;
+    height: 178.484px;
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 2%;
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+    position: relative;
+    -webkit-box-shadow: 6px 7px 11px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 7px 11px -5px rgba(0,0,0,0.75);
+    box-shadow: 6px 7px 11px -5px rgba(0,0,0,0.75);
+    transition: 0.3s;
+}
+
+    .dogcontainerright:hover img {
+        transition: all .3s ease-in-out;
+        transform: scale(1.1);
+    }
+
+@media screen and (max-width: 840px) {
+
+    .dogcontainerright {
+        margin-left: 9.45px;
+    }
+}
+
+.containertext {
+    margin-bottom: 0;
+    padding-bottom: 1%;
+    margin-top: 0;
+    padding-top: 1px;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 3%;
+    text-shadow: 2px 2px 7px #000000;
+    font-style: italic;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footerlist {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+    .footerlist li {
+        display: inline-block;
+        margin-right: 0.5%;
+        border-left: solid 1px rgba(0, 0, 0, 0.7);
+        padding-left: 0.9%;
+        margin-top: 0;
+    }
+
+    .footerlist a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.7);
+        webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+    }
+
+    .footerlist p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .footerlist a:hover {
+        transition: color 0.2s linear;
+        -moz-transition: color 0.2s linear; /* Firefox 4 */
+        -webkit-transition: color 0.2s linear; /* Safari and Chrome */
+        -o-transition: color 0.2s linear; /* Opera */
+        -ms-transition: color 0.2s linear; /* Explorer 10 */
+        color: orange;
+    }
+
+.legaltext {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+@media screen and (max-width: 500px) {
+
+    .headertext {
+        font-size: 10px;
+    }
+
+    .textlefttitle {
+        font-size: 14px;
+    }
+
+    .text-block h1 {
+        font-size: 30px;
+    }
+
+    .text-block p {
+        font-size: 13px;
+    }
+
+    .dogcontainerright {
+    }
+
+    .doglist li {
+        padding-left: 0;
+    }
+
+    #featureddogs {
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+
+
+    .dogcontainerright {
+        margin-left: 3.5px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+
+
+    .dogcontainerright {
+        margin-left: 0;
+    }
+}
+
+.viewdogbutton {
+    padding: 10px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10%;
+    padding: 0;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    -webkit-transition-delay: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    transition-delay: 0.2s;
+    cursor: pointer;
+}
+
+    .viewdogbutton p {
+        margin: 0;
+        border-radius: 3px;
+        background: orange;
+        display: inline-block;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 2.5%;
+        margin-top: 0%;
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+        transition: 0.3s;
+    }
+
+.viewdogbuttontext {
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.viewdogbutton :hover {
+    -webkit-filter: brightness(110%);
+}
+
+.shibaheaderstore {
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    overflow: hidden;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+}
+
+.shibastoretop {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: auto;
+}
+
+.backgroundimage {
+    background: url(../Resources/Images/mainshibabackground.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 1%;
+    height: auto;
+}
+
+.loginform {
+    width: 100%;
+}
+
+.logininput {
+    width: 30%;
+    margin-bottom: 2%;
+    padding: 1%;
+    box-sizing: border-box
+}
+
+.loginbutton {
+    width: 30%;
+    padding: 1%;
+    margin-bottom: 2%;
+}
+
+.success {
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0;
+    padding-top: 1.5%;
+    margin-bottom: 0;
+    padding-bottom: 2%;
+}
+
+.dogstorecontainer {
+    margin: 0;
+    height: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    background: rgba();
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(25%, rgba(0, 0, 0, 0.3)), color-stop(75%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0)));
+    margin-bottom: 2%;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    display:none;
+}
+
+.dogname {
+    font-family: 'Fredoka One', cursive;
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 2px 7px #000000;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+.dogdesc {
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0;
+    margin-bottom: 5%;
+    padding-bottom: 1.5%;
+}
+
+.storeimage {
+    width: 384px;
+    height: 216px;
+    margin-bottom: 2%;
+    float: left;
+    margin-left: 30%;
+    margin-top: 2%;
+    -webkit-box-shadow: 6px 7px 11px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 7px 11px -5px rgba(0,0,0,0.75);
+}
+
+.storeimagecontainer {
+    width: 100%;
+    float: left;
+}
+
+.storetextcontainer {
+
+    float: left;
+    width: 25%;
+}
+
+.wishbutton {
+    padding: 10px;
+    width: 200px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    -webkit-transition-delay: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    transition-delay: 0.2s;
+    cursor: pointer;
+    background-color: orange;
+    border: none;
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 3px;
+}
+
+    .wishbutton p {
+        margin: 0;
+        border-radius: 3px;
+        background: orange;
+        display: inline-block;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 2.5%;
+        margin-top: 0%;
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+        transition: 0.3s;
+    }
+
+.wishbuttontext {
+    
+}
+
+@media screen and (max-width: 1150px) {
+
+    .storeimage {
+        display: none;
+    }
+
+    .storetextcontainer {
+        float: unset;
+        text-align: center;
+        width:100%;
+    }
+
+    .dogstorecontainer{
+        text-align: center;
+    }
+
+    .dogname {
+        margin-top: 2%;
+    }
+
+    .wishbutton p {
+        margin-bottom: 10%;
+    }
+}
+
+.logindiv {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(25%, rgba(0, 0, 0, 0.3)), color-stop(75%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0)));
+    margin: 0;
+    height: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.dogselector {
+    
+}
+
+.selectorimage {
+    width: 192px;
+    height: 108px;
+    -webkit-filter: brightness(80%);
+    transition: all .3s ease-in-out;
+}
+
+.selectorlist {
+    list-style-type: none;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 2%;
+    padding: 0;
+
+}
+
+    .selectorlist li {
+        display: inline-block;
+        padding: 10px;
+    }
+
+.selectorimage:hover {
+    cursor: pointer;
+    
+}
+
+.selectortext {
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 0%;
+}
+.selectorimage:focus,  selectorimage:active {
+    -webkit-filter: brightness(120%);
+    transform: scale(1.1);
+}
+
+.loginspan:hover{
+    cursor:pointer;
+}
+
+.selectorimagepage {
+    width: 192px;
+    height: 108px;
+    -webkit-box-shadow: 6px 7px 11px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 7px 11px -5px rgba(0,0,0,0.75);
+    box-shadow: 6px 7px 11px -5px rgba(0,0,0,0.75);
+}
+
